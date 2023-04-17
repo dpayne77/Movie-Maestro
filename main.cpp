@@ -15,8 +15,8 @@ void testQuick() {
     for (int i = 0; i < 15; i++) {
         cout << ratings[i] << endl;
     }
-
 }
+
 void testMerge() {
     int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
     mergeSort(ratings, 0, 14);
@@ -24,12 +24,23 @@ void testMerge() {
     for (int i = 0; i < 15; i++) {
         cout << ratings[i] << endl;
     }
+}
 
+void testParse() {
+    // print first 10 lines of movies.csv
+    vector<vector<string>> movies = parseMovies(10);
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies[i].size(); j++) {
+            cout << movies[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
 int main() {
-    testQuick();
-    testMerge();
+    // testQuick();
+    // testMerge();
+    testParse();
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
 
