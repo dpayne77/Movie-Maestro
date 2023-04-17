@@ -23,7 +23,7 @@ void merge(int arr[], int leftIndex, int midIndex, int rightIndex) {
     int leftHalf[leftSize];
     int rightHalf[rightSize];
     for (int i = 0; i < leftSize; i++) {
-        leftHalf[i] = arr[leftIndex + 1];
+        leftHalf[i] = arr[leftIndex + i];
     }
     for (int i = 0; i < rightSize; i++) {
         rightHalf[i] = arr[midIndex + i + 1];
@@ -39,11 +39,11 @@ void merge(int arr[], int leftIndex, int midIndex, int rightIndex) {
         } else {
             arr[mergedCt++] = rightHalf[rightCt++];
         }
-        while (leftCt < leftSize) {
-            arr[mergedCt++] = leftHalf[leftCt++];
-        }
-        while (rightCt < rightSize) {
-            arr[mergedCt++] = rightHalf[rightCt++];
-        }
+    }
+    while (leftCt < leftSize) {
+        arr[mergedCt++] = leftHalf[leftCt++];
+    }
+    while (rightCt < rightSize) {
+        arr[mergedCt++] = rightHalf[rightCt++];
     }
 }
