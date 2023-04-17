@@ -4,6 +4,9 @@
 
 using namespace std;
 
+void quickSort(int ratings[], int low, int high);
+int partition(int ratings[], int low, int high);
+
 void quickSort(int ratings[], int low, int high) {
     if (low < high) {
         int pivot = partition(ratings, low, high);
@@ -24,7 +27,7 @@ int partition(int ratings[], int low, int high) {
             up++;
         }
         for (int j = high; j > low; j--) {
-            if (arr[down] < pivot) {
+            if (ratings[down] < pivot) {
                 break;
             }
             down--;

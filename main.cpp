@@ -8,6 +8,10 @@
 
 using namespace std;
 
+void testQuickandMerge() {
+
+}
+
 int main() {
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
@@ -66,3 +70,4 @@ int main() {
         }
     }
 }
+
