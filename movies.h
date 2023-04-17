@@ -3,66 +3,66 @@
 #include <iostream>
 
 class Movies {
-  private: 
-		std::string movie_id;
-		std::string movie_name;
-		int year;
-		std::string certificate;
-		std::string runtime;
-		std::string genre;
-		int rating;
-		std::string description;
-		std::string director;
-		std::string director_id;
-		std::string star;
-		std::string star_id;
-		int votes;
-		int gross;
+private: 
+	std::string movie_id;
+	std::string movie_name;
+	int year;
+	std::string certificate;
+	std::string runtime;
+	std::string genre;
+	int rating;
+	std::string description;
+	std::string director;
+	std::string director_id;
+	std::string star;
+	std::string star_id;
+	int votes;
+	int gross;
 
-	public:
-		Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::string genre, int rating, std::string description, std::string director, std::string director_id, std::string star, std::string star_id, int votes, int gross);
+public:
+	Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::string genre, int rating, std::string description, std::string director, std::string director_id, std::string star, std::string star_id, int votes, int gross);
 		
-		void setMovieID(std::string movie_id);
-		std::string getMovieID();
+	void setMovieID(std::string movie_id);
+	std::string getMovieID();
 		
-		void setMovieName(std::string movie_name);
-		std::string getMovieName();
+	void setMovieName(std::string movie_name);
+	std::string getMovieName();
 		
-		void setYear(int year);
-		int getYear();
+	void setYear(int year);
+	int getYear();
 		
-		void setCertificate(std::string certificate);
-		std::string getCertificate();
+	void setCertificate(std::string certificate);
+	std::string getCertificate();
 		
-		void setRuntime(std::string runtime);
-		std::string getRuntime();
+	void setRuntime(std::string runtime);
+	std::string getRuntime();
 		
-		void setGenre(std::string genre);
-		std::string getGenre();
+	void setGenre(std::string genre);
+	std::string getGenre();
 		
-		void setRating(int rating);
-		int getRating();
-		
-		void setDescription(std::string description);
-		std::string getDescription();
+	void setRating(int rating);
+	int getRating();
+	
+	void setDescription(std::string description);
+	std::string getDescription();
 
-		void setDirector(std::string director);
-		std::string getDirector();
+	void setDirector(std::string director);
+	std::string getDirector();
 		
-		void setDirectorID(std::string director_id);
-		std::string getDirectorID();
+	void setDirectorID(std::string director_id);
+	std::string getDirectorID();
 		
-		void setStar(std::string star);
-		std::string getStar();
+	void setStar(std::string star);
+	std::string getStar();
 		
-		void setStarID(std::string star_id);
-		std::string getStarID();
+	void setStarID(std::string star_id);
+	std::string getStarID();
 
-		void setVotes(int votes);
-		int getVotes();
+	void setVotes(int votes);
+	int getVotes();
 		
-		void setGross(int gross);
-		int getGross();
+	void setGross(int gross);
+	int getGross();
 
 };
 
