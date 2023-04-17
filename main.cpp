@@ -9,7 +9,12 @@
 using namespace std;
 
 void testQuickandMerge() {
-
+    int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
+    quickSort(ratings, 0, 14);
+    for (int i = 0; i < 15; i++) {
+        cout << ratings[i] << endl;
+    }
+    
 }
 
 int main() {
