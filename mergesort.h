@@ -4,9 +4,12 @@
 
 using namespace std;
 
+void mergeSort(int ratings[], int start, int end);
+void merge(int arr[], int leftIndex, int midIndex, int rightIndex);
+
 void mergeSort(int ratings[], int start, int end) {
   if (start < end) {
-      middle = (start + end) / 2;
+      int middle = (start + end) / 2;
       mergeSort(ratings, start, middle);
       mergeSort(ratings, middle + 1, end);
       merge(ratings, start, middle, end);
@@ -14,16 +17,16 @@ void mergeSort(int ratings[], int start, int end) {
 }
 
 void merge(int arr[], int leftIndex, int midIndex, int rightIndex) {
-    int leftSize = mid - left + 1;
-    int rightSize = right - mid;
+    int leftSize = midIndex - leftIndex + 1;
+    int rightSize = rightIndex - midIndex;
 
     int leftHalf[leftSize];
     int rightHalf[rightSize];
     for (int i = 0; i < leftSize; i++) {
-        leftHalf[i] = arr[leftIndex + 1]
+        leftHalf[i] = arr[leftIndex + 1];
     }
     for (int i = 0; i < rightSize; i++) {
-        rightHalf[i] = arr[midIndex + i + 1]
+        rightHalf[i] = arr[midIndex + i + 1];
     }
 
     int leftCt = 0;

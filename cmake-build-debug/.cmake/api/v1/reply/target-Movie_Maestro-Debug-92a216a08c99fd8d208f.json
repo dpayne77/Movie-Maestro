@@ -45,7 +45,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -fdiagnostics-color=always"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -55,7 +55,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/Yump0/Documents/GitHub/Movie-Maestro/."
+					"path" : "C:/Users/dookw/Documents/GitHub/Movie-Maestro/."
 				}
 			],
 			"language" : "CXX",
