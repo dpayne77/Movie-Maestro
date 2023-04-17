@@ -26,15 +26,20 @@ int main() {
 
         cin >> userInput;
 
+        string searchTerm = ""; // search term will hold either actor, director, or genre.
+
         if (userInput == "1") {
             cout << "What actor would you like to search for?" << endl;
+            cin >> searchTerm;
         }
         else if (userInput == "2") {
             cout << "What director would you like to search for?" << endl;
+            cin >> searchTerm;
         }
         else if (userInput == "3") {
             cout << "What genre would you like to search for?" << endl;
             // maybe print options later?
+            cin >> searchTerm;
         }
         else if (userInput == "4") {
             // Option 4 (box office) doesn't need a secondary question
