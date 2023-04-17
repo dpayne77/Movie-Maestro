@@ -8,6 +8,7 @@ void quickSort(int ratings[], int low, int high);
 int partition(int ratings[], int low, int high);
 
 void quickSort(int ratings[], int low, int high) {
+    // source: Discussion 8 - Sorting slides, slide 29
     if (low < high) {
         int pivot = partition(ratings, low, high);
         quickSort(ratings, low, pivot -1);
@@ -16,6 +17,7 @@ void quickSort(int ratings[], int low, int high) {
 }
 
 int partition(int ratings[], int low, int high) {
+    // source: Discussion 8 - Sorting slides, slide 29
     int pivot = ratings[low];
     int up = low;
     int down = high;
