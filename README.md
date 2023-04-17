@@ -1,4 +1,4 @@
-# Movie-Maestro
+# Movie-Maestro 🎞️
 Project 3 for data structures
 
 Team Members: David Payne, C.J. Annunziato, Matthew Dong
