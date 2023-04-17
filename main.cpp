@@ -14,7 +14,7 @@ void testQuickandMerge() {
     for (int i = 0; i < 15; i++) {
         cout << ratings[i] << endl;
     }
-    
+
 }
 
 int main() {
