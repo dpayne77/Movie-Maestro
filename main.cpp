@@ -8,9 +8,19 @@
 
 using namespace std;
 
-void testQuickandMerge() {
+void testQuick() {
     int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
     quickSort(ratings, 0, 14);
+    cout << "quick:" << endl;
+    for (int i = 0; i < 15; i++) {
+        cout << ratings[i] << endl;
+    }
+
+}
+void testMerge() {
+    int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
+    mergeSort(ratings, 0, 14);
+    cout << "merge:" << endl;
     for (int i = 0; i < 15; i++) {
         cout << ratings[i] << endl;
     }
@@ -18,6 +28,8 @@ void testQuickandMerge() {
 }
 
 int main() {
+    testQuick();
+    testMerge();
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
 

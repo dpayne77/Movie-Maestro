@@ -1,3 +1,0 @@
-C:/Users/dookw/Documents/GitHub/Movie-Maestro/cmake-build-debug/CMakeFiles/Movie_Maestro.dir
-C:/Users/dookw/Documents/GitHub/Movie-Maestro/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/dookw/Documents/GitHub/Movie-Maestro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
