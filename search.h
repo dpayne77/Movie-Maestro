@@ -1,3 +1,5 @@
+void searchDistributor(int searchOption, std::string searchTerm, int searchType);
+void printMoviesArray(Movies arr[], int len);
 
 void searchDistributor(int searchOption, std::string searchTerm, int searchType) {
     /*
@@ -6,7 +8,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
      * string searchTerm is the actor, director, or genre. For gross it will be an empty string.
      * int searchType is 1. Merge Sort or 2. Quick Sort
     */
-    int numLines = 5; // how many lines to parse (change l8r)
+    int numLines = 1000; // how many lines to parse (change l8r)
     vector<Movies> allMovies = parseMovies(numLines);
     if (searchOption == 1) {
         // search by actor
@@ -14,7 +16,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         for (int i = 0; i < allMovies.size(); i++) {
             vector<string> stars = allMovies[i].getStar();
             for (int j = 0; j < stars.size(); j++) {
-                if (stars[j] == searchTerm) {
+                if (stars[j].find(searchTerm) != string::npos) {
                     actorMovies.push_back(allMovies[i]);
                 }
             }
@@ -24,6 +26,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         copy(actorMovies.begin(), actorMovies.end(), arr);
         if (searchType == 1) {
             mergeSort(arr, 0, n - 1);
+            printMoviesArray(arr, n);
         }
         else {
             quickSort(arr, 0, n - 1);
@@ -73,5 +76,17 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
     }
     else if (searchOption == 4) {
         // search by gross
+    }
+}
+
+void printMoviesArray(Movies arr[], int len) {
+    for (int i = 0; i < len; i++) {
+        cout << arr[i].getMovieName() << endl;
+        vector<string> names = arr[i].getStar();
+        for (int i = 0;  i < names.size(); i++) {
+            cout << "   Stars: " << names[i] << endl;
+        }
+        cout << "   Rating: " << std::setprecision(2) << arr[i].getRating() << endl;
+        cout << "\ni\n";
     }
 }

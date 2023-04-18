@@ -75,8 +75,9 @@ void testParse() {
 }
 
 int main() {
-    testQuick();
-    testMerge();
+    // testQuick();
+    // testMerge();
+    searchDistributor(1, "John", 1);
 
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
