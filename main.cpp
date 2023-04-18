@@ -36,7 +36,7 @@ void testMerge() {
     arr[4].setRating(9);
     printMoviesArr(arr, n);
     cout << "performing merge sort..." << endl;
-    mergeSort(arr, 0, n);
+    mergeSort(arr, 0, n - 1);
     printMoviesArr(arr, n);
 }
 
