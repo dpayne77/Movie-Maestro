@@ -1,4 +1,3 @@
-// movie class will go here
 #pragma once
 #include <iostream>
 
