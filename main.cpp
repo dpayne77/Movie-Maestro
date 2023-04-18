@@ -16,12 +16,20 @@ void printMoviesArr(Movies arr[], int len) {
 }
 
 void testQuick() {
-    int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
-    quickSort(ratings, 0, 14);
-    cout << "quick:" << endl;
-    for (int i = 0; i < 15; i++) {
-        cout << ratings[i] << endl;
-    }
+    vector<Movies> vec = parseMovies(5);
+    int n = vec.size();
+    Movies arr[n];
+    copy(vec.begin(), vec.end(), arr);
+    arr[0].setRating(8);
+    arr[1].setRating(5);
+    arr[2].setRating(2);
+    arr[3].setRating(10);
+    arr[4].setRating(9);
+    cout << "\nunsorted:" << endl;
+    printMoviesArr(arr, n);
+    cout << "\nperforming quick sort..." << endl;
+    quickSort(arr, 0, n - 1);
+    printMoviesArr(arr, n);
 }
 
 void testMerge() {
@@ -34,8 +42,9 @@ void testMerge() {
     arr[2].setRating(2);
     arr[3].setRating(10);
     arr[4].setRating(9);
+    cout << "\nunsorted:" << endl;
     printMoviesArr(arr, n);
-    cout << "performing merge sort..." << endl;
+    cout << "\nperforming merge sort..." << endl;
     mergeSort(arr, 0, n - 1);
     printMoviesArr(arr, n);
 }
@@ -64,7 +73,7 @@ void testParse() {
 }
 
 int main() {
-    // testQuick();
+    testQuick();
     testMerge();
 
     cout << "Welcome to Movie Maestro!" << endl;

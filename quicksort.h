@@ -4,10 +4,10 @@
 
 using namespace std;
 
-void quickSort(int ratings[], int low, int high);
-int partition(int ratings[], int low, int high);
+void quickSort(Movies ratings[], int low, int high);
+int partition(Movies ratings[], int low, int high);
 
-void quickSort(int ratings[], int low, int high) {
+void quickSort(Movies ratings[], int low, int high) { // pass in movie array, start index (0), and length of array - 1 (aka end index)
     // source: Discussion 8 - Sorting slides, slide 29
     if (low < high) {
         int pivot = partition(ratings, low, high);
@@ -16,20 +16,20 @@ void quickSort(int ratings[], int low, int high) {
     }
 }
 
-int partition(int ratings[], int low, int high) {
+int partition(Movies ratings[], int low, int high) {
     // source: Discussion 8 - Sorting slides, slide 29
-    int pivot = ratings[low];
+    int pivot = ratings[low].getRating();
     int up = low;
     int down = high;
     while (up < down) {
         for (int j = up; j < high; j++) {
-            if (ratings[up] > pivot) {
+            if (ratings[up].getRating() > pivot) {
                 break;
             }
             up++;
         }
         for (int j = high; j > low; j--) {
-            if (ratings[down] < pivot) {
+            if (ratings[down].getRating() < pivot) {
                 break;
             }
             down--;
