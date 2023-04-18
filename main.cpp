@@ -8,6 +8,13 @@
 
 using namespace std;
 
+void printMoviesArr(Movies arr[], int len) {
+    for (int i = 0; i < len; i++) {
+        cout << arr[i].getMovieName() << endl;
+        cout << "   Rating: " << to_string(arr[i].getRating()) << endl;
+    }
+}
+
 void testQuick() {
     int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
     quickSort(ratings, 0, 14);
@@ -18,12 +25,19 @@ void testQuick() {
 }
 
 void testMerge() {
-    int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
-    mergeSort(ratings, 0, 14);
-    cout << "merge:" << endl;
-    for (int i = 0; i < 15; i++) {
-        cout << ratings[i] << endl;
-    }
+    vector<Movies> vec = parseMovies(5);
+    int n = vec.size();
+    Movies arr[n];
+    copy(vec.begin(), vec.end(), arr);
+    arr[0].setRating(8);
+    arr[1].setRating(5);
+    arr[2].setRating(2);
+    arr[3].setRating(10);
+    arr[4].setRating(9);
+    printMoviesArr(arr, n);
+    cout << "performing merge sort..." << endl;
+    mergeSort(arr, 0, n);
+    printMoviesArr(arr, n);
 }
 
 void testParse() {
@@ -51,11 +65,11 @@ void testParse() {
 
 int main() {
     // testQuick();
-    // testMerge();
+    testMerge();
 
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
-    testParse();
+    // testParse();
 
     // 2. Prompt user with search options
     string userInput;
