@@ -12,6 +12,7 @@ Project 3 for data structures
 **Features**: Our project will utilize a command-line interface, and the user will be prompted to first select how they want to filter their search: by director name, actor name, genre, or gross box office income. If the user chooses director, actor, or genre, the next line will ask the user to input the term to be searched for (e.g. “Chadwick Boseman”, “Action”). The last question will ask the user how they want to search, either merge sort or quick sort. Finally, a table of data will be displayed with the leftmost column being the user’s chosen search filter, and subsequent columns being genre with each row value containing the movie name and rating. In the case of genre being selected as the filter, there will only be one column. The table is sorted from highest to lowest rating by default for all search options. There will be a little box at the top indicating how much time the selected sorting algorithm took to compare the two algorithms.
 
 **Data**: Source: https://www.kaggle.com/datasets/rajugc/imdb-movies-dataset-based-on-genre?select=family.csv 
+
 In total this dataset has 298,972 touples, across 10 different csv files. Each csv file is a different genre.
 For each movie, there are columns for movie id, movie name, year released, certificates, runtime, genre, rating, description, director, director id, star, star id, votes, and gross income in US Dollars.
 For our program, we will use the movie name, gross income, director, star, genre, and rating categories.
@@ -24,11 +25,13 @@ Movies will be stored in a class that stores the name of the movie, rating, dire
 
 We will have to implement the merge sort and quick sort algorithms.
 
-Distribution of Roles and Responsibilities: 
+**Distribution of Roles and Responsibilities**: 
 CJ Annunziato: Parsing, Database, Merge Sort
 David Payne: User Interface, Quick Sort
 Matthew Dong: Sorting Algorithms, Movie class
 
-References: 
+**References**:
+
 https://www.kaggle.com/datasets/rajugc/imdb-movies-dataset-based-on-genre?select=family.csv
+
 https://www.imdb.com/
