@@ -8,6 +8,7 @@ void mergeSort(int ratings[], int start, int end);
 void merge(int arr[], int leftIndex, int midIndex, int rightIndex);
 
 void mergeSort(int ratings[], int start, int end) {
+    // source: Discussion 8 - Sorting slides, slide 23
   if (start < end) {
       int middle = (start + end) / 2;
       mergeSort(ratings, start, middle);
@@ -17,6 +18,7 @@ void mergeSort(int ratings[], int start, int end) {
 }
 
 void merge(int arr[], int leftIndex, int midIndex, int rightIndex) {
+    // source: Discussion 8 - Sorting slides, slide 24
     int leftSize = midIndex - leftIndex + 1;
     int rightSize = rightIndex - midIndex;
 
