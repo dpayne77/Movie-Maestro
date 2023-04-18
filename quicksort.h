@@ -18,18 +18,18 @@ void quickSort(Movies ratings[], int low, int high) { // pass in movie array, st
 
 int partition(Movies ratings[], int low, int high) {
     // source: Discussion 8 - Sorting slides, slide 29
-    int pivot = ratings[low].getRating();
+    float pivot = ratings[low].getRating();
     int up = low;
     int down = high;
     while (up < down) {
         for (int j = up; j < high; j++) {
-            if (ratings[up].getRating() > pivot) {
+            if (ratings[up].getRating() < pivot) {
                 break;
             }
             up++;
         }
         for (int j = high; j > low; j--) {
-            if (ratings[down].getRating() < pivot) {
+            if (ratings[down].getRating() > pivot) {
                 break;
             }
             down--;
