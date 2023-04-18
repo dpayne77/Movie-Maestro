@@ -50,9 +50,9 @@ vector<Movies> parseMovies(int numLines) {
         }
 
         getline(str, temp, ',');
-        int rating = 0;
+        float rating = 0.0f;
         if (temp != "")
-            rating = stoi(temp);
+            rating = stof(temp);
         newMovie.setRating(rating);
 
         getline(str, temp, ',');

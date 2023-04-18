@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "parse.h"
 #include "movies.h"
 #include "quicksort.h"
@@ -11,7 +12,7 @@ using namespace std;
 void printMoviesArr(Movies arr[], int len) {
     for (int i = 0; i < len; i++) {
         cout << arr[i].getMovieName() << endl;
-        cout << "   Rating: " << to_string(arr[i].getRating()) << endl;
+        cout << "   Rating: " << std::setprecision(2) << arr[i].getRating() << endl;
     }
 }
 
@@ -25,18 +26,13 @@ void testQuick() {
 }
 
 void testMerge() {
-    vector<Movies> vec = parseMovies(5);
+    vector<Movies> vec = parseMovies(3325);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
-    arr[0].setRating(8);
-    arr[1].setRating(5);
-    arr[2].setRating(2);
-    arr[3].setRating(10);
-    arr[4].setRating(9);
-    printMoviesArr(arr, n);
+    // printMoviesArr(arr, n);
     cout << "performing merge sort..." << endl;
-    mergeSort(arr, 0, n);
+    mergeSort(arr, 0, n - 1);
     printMoviesArr(arr, n);
 }
 

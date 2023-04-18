@@ -24,6 +24,7 @@ void merge(Movies arr[], int leftIndex, int midIndex, int rightIndex) {
     int rightSize = rightIndex - midIndex;
     Movies leftHalf[leftSize];
     Movies rightHalf[rightSize];
+
     for (int i = 0; i < leftSize; i++) {
         leftHalf[i] = arr[leftIndex + i];
     }
@@ -34,14 +35,14 @@ void merge(Movies arr[], int leftIndex, int midIndex, int rightIndex) {
     int leftCt = 0;
     int rightCt = 0;
     int mergedCt = leftIndex;
+
     while (leftCt < leftSize && rightCt < rightSize) {
-        if (leftHalf[leftCt].getRating() <= rightHalf[rightCt].getRating()) {
+        if (leftHalf[leftCt].getRating() >= rightHalf[rightCt].getRating()) {
             arr[mergedCt++] = leftHalf[leftCt++];
         } else {
             arr[mergedCt++] = rightHalf[rightCt++];
         }
     }
-
     // copy merged halves back into array
     while (leftCt < leftSize) {
         arr[mergedCt++] = leftHalf[leftCt++];

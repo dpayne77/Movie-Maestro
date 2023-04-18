@@ -10,7 +10,7 @@ private:
 	std::string certificate;
 	std::string runtime;
 	std::vector<std::string> genre;
-	int rating;
+	float rating;
 	std::string description;
 	std::vector<std::string> director;
 	std::string director_id;
@@ -20,7 +20,7 @@ private:
 	int gross;
 
 public:
-	Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::vector<std::string> genre, int rating, std::string description, std::vector<std::string> director, std::string director_id, std::vector<std::string> star, std::vector<std::string> star_id, int votes, int gross);
+	Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::vector<std::string> genre, float rating, std::string description, std::vector<std::string> director, std::string director_id, std::vector<std::string> star, std::vector<std::string> star_id, int votes, int gross);
 	Movies();
 
 	void setMovieID(std::string movie_id);
@@ -41,8 +41,8 @@ public:
 	void setGenre(std::string genre);
 	std::vector<std::string> getGenre();
 
-	void setRating(int rating);
-	int getRating();
+	void setRating(float rating);
+	float getRating();
 
 	void setDescription(std::string description);
 	std::string getDescription();
@@ -67,7 +67,7 @@ public:
 
 };
 
-Movies::Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::vector<std::string> genre, int rating, std::string description, std::vector<std::string> director, std::string director_id, std::vector<std::string> star, std::vector<std::string> star_id, int votes, int gross) {
+Movies::Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::vector<std::string> genre, float rating, std::string description, std::vector<std::string> director, std::string director_id, std::vector<std::string> star, std::vector<std::string> star_id, int votes, int gross) {
 	this->movie_id = movie_id;
 	this->movie_name = movie_name;
 	this->year = year;
@@ -91,7 +91,7 @@ Movies::Movies() {
 	certificate = "";
 	runtime = "";
 	genre = {};
-	rating = -1;
+	rating = -1.0f;
 	description = "";
 	director = {};
 	director_id = "";
@@ -149,11 +149,11 @@ std::vector<std::string> Movies::getGenre() {
 	return genre;
 }
 
-void Movies::setRating(int rating) {
+void Movies::setRating(float rating) {
 	this->rating = rating;
 }
 
-int Movies::getRating() {
+float Movies::getRating() {
 	return rating;
 }
 
