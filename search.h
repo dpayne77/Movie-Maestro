@@ -1,5 +1,4 @@
 
-
 void searchDistributor(int searchOption, std::string searchTerm, int searchType) {
     /*
      * Parameters:
@@ -13,13 +12,64 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         // search by actor
         vector<Movies> actorMovies;
         for (int i = 0; i < allMovies.size(); i++) {
+            vector<string> stars = allMovies[i].getStar();
+            for (int j = 0; j < stars.size(); j++) {
+                if (stars[j] == searchTerm) {
+                    actorMovies.push_back(allMovies[i]);
+                }
+            }
+        }
+        int n = actorMovies.size();
+        Movies arr[n];
+        copy(actorMovies.begin(), actorMovies.end(), arr);
+        if (searchType == 1) {
+            mergeSort(arr, 0, n - 1);
+        }
+        else {
+            quickSort(arr, 0, n - 1);
         }
     }
     else if (searchOption == 2) {
         // search by director
+        vector<Movies> directorMovies;
+        for (int i = 0; i < allMovies.size(); i++) {
+            vector<string> directors = allMovies[i].getDirector();
+            for (int j = 0; j < directors.size(); j++) {
+                if (directors[j] == searchTerm) {
+                    directorMovies.push_back(allMovies[i]);
+                }
+            }
+        }
+        int n = directorMovies.size();
+        Movies arr[n];
+        copy(directorMovies.begin(), directorMovies.end(), arr);
+        if (searchType == 1) {
+            mergeSort(arr, 0, n - 1);
+        }
+        else {
+            quickSort(arr, 0, n - 1);
+        }
     }
     else if (searchOption == 3) {
         // search by genre
+        vector<Movies> genreMovies;
+        for (int i = 0; i < allMovies.size(); i++) {
+            vector<string> genres = allMovies[i].getGenre();
+            for (int j = 0; j < genres.size(); j++) {
+                if (genres[j] == searchTerm) {
+                    genreMovies.push_back(allMovies[i]);
+                }
+            }
+        }
+        int n = genreMovies.size();
+        Movies arr[n];
+        copy(genreMovies.begin(), genreMovies.end(), arr);
+        if (searchType == 1) {
+            mergeSort(arr, 0, n - 1);
+        }
+        else {
+            quickSort(arr, 0, n - 1);
+        }
     }
     else if (searchOption == 4) {
         // search by gross
