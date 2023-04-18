@@ -1,8 +1,10 @@
 # Movie-Maestro 🎞️
 Project 3 for data structures
 
-Team Members: David Payne, C.J. Annunziato, Matthew Dong
+**Team Members**: David Payne, C.J. Annunziato, Matthew Dong
+
 **Project Title**: “Movie Maestro”
+
 **Problem**: Our program intends to solve the problem of not easily being able to find movies based on rating by filtering through director name, actor name, genre, and gross box office income in USD from IMDb. This solves the larger problem of searching for a movie to watch.
 
 **Motivation**: This is a problem of convenience because currently on the IMDb website, an actor’s or director’s profile lists only four movies in the “Known For” section and does not display a full list. There is no option to search through movies by genre or gross on IMDB either. As movie sorting connoisseurs, we are passionate about movies and would love to have an easier way of having more options to search for different movies.
