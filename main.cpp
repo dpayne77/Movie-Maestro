@@ -33,9 +33,19 @@ void testParse() {
 
     for (auto & movieObject : movieObjects) {
         cout << movieObject.getMovieName() << endl;
-        cout << "   Genre: " << movieObject.getGenre() << endl;
+        cout << "   Genre: ";
+        vector<string> genres = movieObject.getGenre();
+        for (int i = 0; i < genres.size(); i++) {
+            cout << genres.at(i);
+        }
+        cout << "\n";
         cout << "   Rating: " << to_string(movieObject.getRating()) << endl;
-        cout << "   Starring: " << movieObject.getStar() << endl;
+        cout << "   Starring: ";
+        vector<string>  stars = movieObject.getStar();
+        for (int i = 0; i < stars.size(); i++) {
+            cout<< stars.at(i);
+        }
+
     }
 }
 
