@@ -30,6 +30,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         }
         else {
             quickSort(arr, 0, n - 1);
+            printMoviesArray(arr, n);
         }
     }
     else if (searchOption == 2) {
