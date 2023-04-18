@@ -28,21 +28,24 @@ void testMerge() {
 
 void testParse() {
     // print first 10 lines of movies.csv
-    vector<vector<string>> movies = parseMovies(10);
-    for (int i = 0; i < movies.size(); i++) {
-        for (int j = 0; j < movies[i].size(); j++) {
-            cout << movies[i][j] << " ";
-        }
-        cout << endl;
+    cout << "Creating 5 movie objects:" << endl;
+    vector<Movies> movieObjects = parseMovies(5);
+
+    for (auto & movieObject : movieObjects) {
+        cout << movieObject.getMovieName() << endl;
+        cout << "   Genre: " << movieObject.getGenre() << endl;
+        cout << "   Rating: " << to_string(movieObject.getRating()) << endl;
+        cout << "   Starring: " << movieObject.getStar() << endl;
     }
 }
 
 int main() {
     // testQuick();
     // testMerge();
-    testParse();
+
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
+    // testParse();
 
     // 2. Prompt user with search options
     string userInput;

@@ -21,7 +21,8 @@ private:
 
 public:
 	Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::string genre, int rating, std::string description, std::string director, std::string director_id, std::string star, std::string star_id, int votes, int gross);
-		
+    Movies();
+
 	void setMovieID(std::string movie_id);
 	std::string getMovieID();
 		
@@ -81,6 +82,23 @@ Movies::Movies(std::string movie_id, std::string movie_name, int year, std::stri
 	this->star_id = star_id;
 	this->votes = votes;
 	this->gross = gross;
+}
+
+Movies::Movies() {
+    this->movie_id = "";
+    this->movie_name = "";
+    this->year = -1;
+    this->certificate = "";
+    this->runtime = "";
+    this->genre = "";
+    this->rating = -1;
+    this->description = "";
+    this->director = "";
+    this->director_id = "";
+    this->star = "";
+    this->star_id = "";
+    this->votes = -1;
+    this->gross = -1;
 }
 
 void Movies::setMovieID(std::string movie_id) {
