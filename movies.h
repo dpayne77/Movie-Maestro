@@ -1,72 +1,73 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 class Movies {
-private: 
+private:
 	std::string movie_id;
 	std::string movie_name;
 	int year;
 	std::string certificate;
 	std::string runtime;
-	std::string genre;
+	std::vector<std::string> genre;
 	int rating;
 	std::string description;
-	std::string director;
+	std::vector<std::string> director;
 	std::string director_id;
-	std::string star;
-	std::string star_id;
+	std::vector<std::string> star;
+	std::vector<std::string> star_id;
 	int votes;
 	int gross;
 
 public:
-	Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::string genre, int rating, std::string description, std::string director, std::string director_id, std::string star, std::string star_id, int votes, int gross);
-    Movies();
+	Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::vector<std::string> genre, int rating, std::string description, std::vector<std::string> director, std::string director_id, std::vector<std::string> star, std::vector<std::string> star_id, int votes, int gross);
+	Movies();
 
 	void setMovieID(std::string movie_id);
 	std::string getMovieID();
-		
+
 	void setMovieName(std::string movie_name);
 	std::string getMovieName();
-		
+
 	void setYear(int year);
 	int getYear();
-		
+
 	void setCertificate(std::string certificate);
 	std::string getCertificate();
-		
+
 	void setRuntime(std::string runtime);
 	std::string getRuntime();
-		
+
 	void setGenre(std::string genre);
-	std::string getGenre();
-		
+	std::vector<std::string> getGenre();
+
 	void setRating(int rating);
 	int getRating();
-	
+
 	void setDescription(std::string description);
 	std::string getDescription();
 
 	void setDirector(std::string director);
-	std::string getDirector();
-		
+	std::vector<std::string> getDirector();
+
 	void setDirectorID(std::string director_id);
 	std::string getDirectorID();
-		
+
 	void setStar(std::string star);
-	std::string getStar();
-		
+	std::vector<std::string> getStar();
+
 	void setStarID(std::string star_id);
-	std::string getStarID();
+	std::vector<std::string> getStarID();
 
 	void setVotes(int votes);
 	int getVotes();
-		
+
 	void setGross(int gross);
 	int getGross();
 
 };
 
-Movies::Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::string genre, int rating, std::string description, std::string director, std::string director_id, std::string star, std::string star_id, int votes, int gross) {
+Movies::Movies(std::string movie_id, std::string movie_name, int year, std::string certificate, std::string runtime, std::vector<std::string> genre, int rating, std::string description, std::vector<std::string> director, std::string director_id, std::vector<std::string> star, std::vector<std::string> star_id, int votes, int gross) {
 	this->movie_id = movie_id;
 	this->movie_name = movie_name;
 	this->year = year;
@@ -84,20 +85,20 @@ Movies::Movies(std::string movie_id, std::string movie_name, int year, std::stri
 }
 
 Movies::Movies() {
-    this->movie_id = "";
-    this->movie_name = "";
-    this->year = -1;
-    this->certificate = "";
-    this->runtime = "";
-    this->genre = "";
-    this->rating = -1;
-    this->description = "";
-    this->director = "";
-    this->director_id = "";
-    this->star = "";
-    this->star_id = "";
-    this->votes = -1;
-    this->gross = -1;
+	movie_id = "";
+	movie_name = "";
+	year = -1;
+	certificate = "";
+	runtime = "";
+	//genre = "";
+	rating = -1;
+	description = "";
+	//director = "";
+	director_id = "";
+	//star = "";
+	//star_id = "";
+	votes = -1;
+	gross = -1;
 }
 
 void Movies::setMovieID(std::string movie_id) {
@@ -141,10 +142,10 @@ std::string Movies::getRuntime() {
 }
 
 void Movies::setGenre(std::string genre) {
-	this->genre = genre;
+	this->genre.push_back(genre);
 }
 
-std::string Movies::getGenre() {
+std::vector<std::string> Movies::getGenre() {
 	return genre;
 }
 
@@ -165,10 +166,10 @@ std::string Movies::getDescription() {
 }
 
 void Movies::setDirector(std::string director) {
-	this->director = director;
+	this->director.push_back(director);
 }
 
-std::string Movies::getDirector() {
+std::vector<std::string> Movies::getDirector() {
 	return director;
 }
 
@@ -181,18 +182,18 @@ std::string Movies::getDirectorID() {
 }
 
 void Movies::setStar(std::string star) {
-	this->star = star;
+	this->star.push_back(star);
 }
 
-std::string Movies::getStar() {
+std::vector<std::string> Movies::getStar() {
 	return star;
 }
 
 void Movies::setStarID(std::string star_id) {
-	this->star_id = star_id;
+	this->star_id.push_back(star_id);
 }
 
-std::string Movies::getStarID() {
+std::vector<std::string> Movies::getStarID() {
 	return star_id;
 }
 
