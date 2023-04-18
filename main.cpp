@@ -27,7 +27,7 @@ void testMerge() {
 }
 
 void testParse() {
-    // print first 10 lines of movies.csv
+    // print first 5 lines of movies.csv
     cout << "Creating 5 movie objects:" << endl;
     vector<Movies> movieObjects = parseMovies(5);
 
@@ -36,16 +36,16 @@ void testParse() {
         cout << "   Genre: ";
         vector<string> genres = movieObject.getGenre();
         for (int i = 0; i < genres.size(); i++) {
-            cout << genres.at(i);
+            cout << genres.at(i) << ", ";
         }
         cout << "\n";
         cout << "   Rating: " << to_string(movieObject.getRating()) << endl;
         cout << "   Starring: ";
         vector<string>  stars = movieObject.getStar();
         for (int i = 0; i < stars.size(); i++) {
-            cout<< stars.at(i);
+            cout << stars.at(i) << ", ";
         }
-
+        cout << "\n";
     }
 }
 
@@ -55,7 +55,7 @@ int main() {
 
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
-    // testParse();
+    testParse();
 
     // 2. Prompt user with search options
     string userInput;

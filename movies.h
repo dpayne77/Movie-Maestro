@@ -73,13 +73,13 @@ Movies::Movies(std::string movie_id, std::string movie_name, int year, std::stri
 	this->year = year;
 	this->certificate = certificate;
 	this->runtime = runtime;
-	this->genre = genre;
+	this->genre = {genre};
 	this->rating = rating;
 	this->description = description;
-	this->director = director;
+	this->director = {director};
 	this->director_id = director_id;
-	this->star = star;
-	this->star_id = star_id;
+	this->star = {star};
+	this->star_id = {star_id};
 	this->votes = votes;
 	this->gross = gross;
 }
@@ -90,13 +90,13 @@ Movies::Movies() {
 	year = -1;
 	certificate = "";
 	runtime = "";
-	//genre = "";
+	genre = {};
 	rating = -1;
 	description = "";
-	//director = "";
+	director = {};
 	director_id = "";
-	//star = "";
-	//star_id = "";
+	star = {};
+	star_id = {};
 	votes = -1;
 	gross = -1;
 }

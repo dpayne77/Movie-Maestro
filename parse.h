@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
 #include "movies.h"
 
 using namespace std;
@@ -40,11 +41,16 @@ vector<Movies> parseMovies(int numLines) {
         // newMovie.setRuntime(temp);
 
         getline(str, temp, ',');
-        newMovie.setGenre(temp);
+        // split genre strings into a vector & remove spaces
+        stringstream s(temp);
+        string genre;
+        while (getline(s, genre, '|')) {
+            genre.erase(std::remove(genre.begin(), genre.end(), ' '), genre.end());
+            newMovie.setGenre(genre);
+        }
 
         getline(str, temp, ',');
         int rating = 0;
-        std::cout << temp << std::endl;
         if (temp != "")
             rating = stoi(temp);
         newMovie.setRating(rating);
@@ -59,7 +65,11 @@ vector<Movies> parseMovies(int numLines) {
         // newMovie.setDirectorID(temp);
 
         getline(str, temp, ',');
-        // newMovie.setStar(temp);
+        stringstream ss(temp);
+        string star;
+        while (getline(ss, star, '|')) {
+            newMovie.setStar(star);
+        }
 
         getline(str, temp, ',');
         // newMovie.setStarID(temp);
