@@ -4,6 +4,7 @@
 #include "movies.h"
 #include "quicksort.h"
 #include "mergesort.h"
+#include "search.h"
 #include <string>
 #include <vector>
 
@@ -17,12 +18,20 @@ void printMoviesArr(Movies arr[], int len) {
 }
 
 void testQuick() {
-    int ratings[] = {6, 5,3, 1,7,4,3,2,6,5,3,1,5,6,3};
-    quickSort(ratings, 0, 14);
-    cout << "quick:" << endl;
-    for (int i = 0; i < 15; i++) {
-        cout << ratings[i] << endl;
-    }
+    vector<Movies> vec = parseMovies(5);
+    int n = vec.size();
+    Movies arr[n];
+    copy(vec.begin(), vec.end(), arr);
+    arr[0].setRating(8);
+    arr[1].setRating(5);
+    arr[2].setRating(2);
+    arr[3].setRating(10);
+    arr[4].setRating(9);
+    cout << "\nunsorted:" << endl;
+    printMoviesArr(arr, n);
+    cout << "\nperforming quick sort..." << endl;
+    quickSort(arr, 0, n - 1);
+    printMoviesArr(arr, n);
 }
 
 void testMerge() {
@@ -30,8 +39,14 @@ void testMerge() {
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
-    // printMoviesArr(arr, n);
-    cout << "performing merge sort..." << endl;
+    arr[0].setRating(8);
+    arr[1].setRating(5);
+    arr[2].setRating(2);
+    arr[3].setRating(10);
+    arr[4].setRating(9);
+    cout << "\nunsorted:" << endl;
+    printMoviesArr(arr, n);
+    cout << "\nperforming merge sort..." << endl;
     mergeSort(arr, 0, n - 1);
     printMoviesArr(arr, n);
 }
@@ -60,7 +75,7 @@ void testParse() {
 }
 
 int main() {
-    // testQuick();
+    testQuick();
     testMerge();
 
     cout << "Welcome to Movie Maestro!" << endl;
@@ -82,22 +97,27 @@ int main() {
         cin >> userInput;
 
         string searchTerm = ""; // search term will hold either actor, director, or genre.
+        int searchOption = 0;
 
         if (userInput == "1") {
             cout << "What actor would you like to search for?" << endl;
             cin >> searchTerm;
+            searchOption = 1;
         }
         else if (userInput == "2") {
             cout << "What director would you like to search for?" << endl;
             cin >> searchTerm;
+            searchOption = 2;
         }
         else if (userInput == "3") {
             cout << "What genre would you like to search for?" << endl;
             // maybe print options later?
             cin >> searchTerm;
+            searchOption = 3;
         }
         else if (userInput == "4") {
             // Option 4 (box office) doesn't need a secondary question
+            searchOption = 4;
         }
         else {
             cout << "Please enter 1-4." << endl;
@@ -120,5 +140,6 @@ int main() {
             cout << "Please enter 1 or 2." << endl;
         }
     }
+
 }
 

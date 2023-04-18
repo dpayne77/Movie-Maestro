@@ -7,7 +7,7 @@ using namespace std;
 void mergeSort(Movies ratings[], int start, int end);
 void merge(Movies arr[], int leftIndex, int midIndex, int rightIndex);
 
-void mergeSort(Movies ratings[], int start, int end) {
+void mergeSort(Movies ratings[], int start, int end) { // pass in movie array, start index (0), and length of array - 1 (aka end index)
     // source: Discussion 8 - Sorting slides, slide 23
   if (start < end) {
       int middle = (start + end) / 2;
