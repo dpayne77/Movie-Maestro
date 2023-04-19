@@ -12,5 +12,5 @@ add_executable(Movie_Maestro
         parse.h
         quicksort.h)
 
-MATH(EXPR stack_size "16 * 1024 * 1024") # 16 Mb
+MATH(EXPR stack_size "16 * 1024 * 1024 * 8") # 16 Mb * 8
 set(CMAKE_EXE_LINKER_FLAGS "-Wl,--stack,${stack_size}")

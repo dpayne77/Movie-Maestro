@@ -18,7 +18,7 @@ void printMoviesArr(Movies arr[], int len) {
 }
 
 void testQuick() {
-    vector<Movies> vec = parseMovies(3327);
+    vector<Movies> vec = parseMovies(30000);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
@@ -35,7 +35,7 @@ void testQuick() {
 }
 
 void testMerge() {
-    vector<Movies> vec = parseMovies(5000);
+    vector<Movies> vec = parseMovies(198629);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
@@ -76,8 +76,8 @@ void testParse() {
 
 int main() {
     // testQuick();
-    // testMerge();
-    searchDistributor(1, "Chris Pratt", 1);
+     testMerge();
+    // searchDistributor(1, "Chris Pratt", 1);
 
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
