@@ -107,6 +107,7 @@ void printMoviesArray(Movies arr[], int len) {
         cout << "\nNumber " << i + 1 << ": \n";
 
         cout << arr[i].getMovieName() << endl;
+
         if (arr[i].getRating() > 0) {
             cout << "   Rating: " << std::setprecision(2) << arr[i].getRating() << "/10" << endl;
         }
@@ -114,10 +115,48 @@ void printMoviesArray(Movies arr[], int len) {
             cout << "   Rating: Not rated" << endl;
         }
 
-        vector<string> names = arr[i].getStar();
-        cout << "   Stars: " << endl;
+        cout <<"   Year: " << arr[i].getYear() << endl;
+
+        if (arr[i].getRuntime() != "") {
+            cout << "   Runtime: " <<  arr[i].getRuntime() << endl;
+        }
+        else {
+            cout << "   Runtime: Not listed" << endl;
+        }
+
+        vector<string> genres = arr[i].getGenre();
+        cout << "   Genre(s): ";
+        for (int i = 0;  i < genres.size(); i++) {
+            if (i > 0) {
+                cout << ", ";
+            }
+            cout << genres[i];
+        }
+        cout << "\n";
+
+        vector<string> names = arr[i].getDirector();
+        cout << "   Director: ";
+        for (int i = 0;  i < names.size(); i++) {
+            if (i > 0) {
+                cout << ", ";
+            }
+            cout << names[i];
+        }
+        cout << "\n";
+
+        names = arr[i].getStar();
+        cout << "   Starring: " << endl;
         for (int i = 0;  i < names.size(); i++) {
             cout << "       - " << names[i] << endl;
         }
+        if (arr[i].getGross() != 0) {
+            cout <<"   Gross: $" << (arr[i].getGross()) << endl;
+        }
+        else {
+            cout <<"   Gross: Not listed" << endl;
+        }
+
+        cout <<"   Description: " << arr[i].getDescription();
+
     }
 }
