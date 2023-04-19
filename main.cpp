@@ -18,7 +18,7 @@ void printMoviesArr(Movies arr[], int len) {
 }
 
 void testQuick() {
-    vector<Movies> vec = parseMovies(5);
+    vector<Movies> vec = parseMovies(3327);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
@@ -28,14 +28,14 @@ void testQuick() {
     arr[3].setRating(10);
     arr[4].setRating(9);
     cout << "\nunsorted:" << endl;
-    printMoviesArr(arr, n);
+    //printMoviesArr(arr, n);
     cout << "\nperforming quick sort..." << endl;
     quickSort(arr, 0, n - 1);
     printMoviesArr(arr, n);
 }
 
 void testMerge() {
-    vector<Movies> vec = parseMovies(3325);
+    vector<Movies> vec = parseMovies(5000);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
@@ -45,7 +45,7 @@ void testMerge() {
     arr[3].setRating(10);
     arr[4].setRating(9);
     cout << "\nunsorted:" << endl;
-    printMoviesArr(arr, n);
+    //printMoviesArr(arr, n);
     cout << "\nperforming merge sort..." << endl;
     mergeSort(arr, 0, n - 1);
     printMoviesArr(arr, n);
@@ -76,8 +76,8 @@ void testParse() {
 
 int main() {
     // testQuick();
-    // testMerge();
-    searchDistributor(1, "John", 2);
+    testMerge();
+    // searchDistributor(1, "John", 2);
 
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
