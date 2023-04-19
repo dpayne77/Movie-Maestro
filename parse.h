@@ -107,11 +107,19 @@ vector<Movies> parseMovies(int numLines) {
         newMovie.setRating(rating);
 
         getline(str, temp, ',');
-        temp.replace(temp.begin(), temp.end(), '|', ',');
+        replace(temp.begin(), temp.end(), '|', ',');
         newMovie.setDescription(temp);
 
         getline(str, temp, ',');
-        newMovie.setDirector(temp);
+        stringstream sss(temp);
+        string director;
+        while (getline(sss, director, '|')) {
+            if (director.at(0) == ' ') {
+                // removing space before director name
+                director = director.substr(1, 100);
+            }
+            newMovie.setDirector(director);
+        }
 
         getline(str, temp, ',');
         newMovie.setDirectorID(temp);

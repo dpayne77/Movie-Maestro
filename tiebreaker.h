@@ -11,7 +11,7 @@ void breakTies(Movies arr[], int len);
 void breakTies(Movies arr[], int len) {
     for (int i = 0; i < len - 1; i++) {
         if (arr[i].getRating() == arr[i+1].getRating() && arr[i].getVotes() > arr[i+1].getVotes()) {
-            std::swap(arr[i], arr[i+1]);
+            std::swap(arr[i+1], arr[i]);
         }
     }
 }
