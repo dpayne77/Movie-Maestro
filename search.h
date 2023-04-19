@@ -43,7 +43,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         for (int i = 0; i < allMovies.size(); i++) {
             vector<string> directors = allMovies[i].getDirector();
             for (int j = 0; j < directors.size(); j++) {
-                if (directors[j] == searchTerm) {
+                if (directors[j].find(searchTerm) != string::npos) {
                     directorMovies.push_back(allMovies[i]);
                 }
             }
@@ -53,9 +53,14 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         copy(directorMovies.begin(), directorMovies.end(), arr);
         if (searchType == 1) {
             mergeSort(arr, 0, n - 1);
+            printMoviesArray(arr, n);
         }
         else {
             quickSort(arr, 0, n - 1);
+            printMoviesArray(arr, n);
+        }
+        if (n == 0) {
+            cout << "Your search returned no results!" << endl;
         }
     }
     else if (searchOption == 3) {
@@ -64,7 +69,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         for (int i = 0; i < allMovies.size(); i++) {
             vector<string> genres = allMovies[i].getGenre();
             for (int j = 0; j < genres.size(); j++) {
-                if (genres[j] == searchTerm) {
+                if (genres[j].find(searchTerm) != string::npos) {
                     genreMovies.push_back(allMovies[i]);
                 }
             }
@@ -74,9 +79,14 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         copy(genreMovies.begin(), genreMovies.end(), arr);
         if (searchType == 1) {
             mergeSort(arr, 0, n - 1);
+            printMoviesArray(arr, n);
         }
         else {
             quickSort(arr, 0, n - 1);
+            printMoviesArray(arr, n);
+        }
+        if (n == 0) {
+            cout << "Your search returned no results!" << endl;
         }
     }
     else if (searchOption == 4) {
