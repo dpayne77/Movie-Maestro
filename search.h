@@ -8,8 +8,9 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
      * string searchTerm is the actor, director, or genre. For gross it will be an empty string.
      * int searchType is 1. Merge Sort or 2. Quick Sort
     */
-    int numLines = 1000; // how many lines to parse (change l8r)
+    int numLines = 198400; // how many lines to parse (change l8r)
     vector<Movies> allMovies = parseMovies(numLines);
+
     if (searchOption == 1) {
         // search by actor
         vector<Movies> actorMovies;
@@ -31,6 +32,9 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         else {
             quickSort(arr, 0, n - 1);
             printMoviesArray(arr, n);
+        }
+        if (n == 0) {
+            cout << "Your search returned no results!" << endl;
         }
     }
     else if (searchOption == 2) {
@@ -84,10 +88,11 @@ void printMoviesArray(Movies arr[], int len) {
     for (int i = 0; i < len; i++) {
         cout << arr[i].getMovieName() << endl;
         vector<string> names = arr[i].getStar();
+        cout << "   Stars: " << endl;
         for (int i = 0;  i < names.size(); i++) {
-            cout << "   Stars: " << names[i] << endl;
+            cout << "       -" << names[i] << endl;
         }
         cout << "   Rating: " << std::setprecision(2) << arr[i].getRating() << endl;
-        cout << "\ni\n";
+        cout << "\n" << i << "\n";
     }
 }
