@@ -68,6 +68,10 @@ vector<Movies> parseMovies(int numLines) {
         stringstream ss(temp);
         string star;
         while (getline(ss, star, '|')) {
+            if (star.at(0) == ' ') {
+                // removing space before actor name
+                star = star.substr(1, 100);
+            }
             newMovie.setStar(star);
         }
 

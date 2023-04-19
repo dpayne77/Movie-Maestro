@@ -86,13 +86,20 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
 
 void printMoviesArray(Movies arr[], int len) {
     for (int i = 0; i < len; i++) {
+        cout << "\nNumber " << i + 1 << ": \n";
+
         cout << arr[i].getMovieName() << endl;
+        if (arr[i].getRating() > 0) {
+            cout << "   Rating: " << std::setprecision(2) << arr[i].getRating() << "/10" << endl;
+        }
+        else {
+            cout << "   Rating: Not rated" << endl;
+        }
+
         vector<string> names = arr[i].getStar();
         cout << "   Stars: " << endl;
         for (int i = 0;  i < names.size(); i++) {
-            cout << "       -" << names[i] << endl;
+            cout << "       - " << names[i] << endl;
         }
-        cout << "   Rating: " << std::setprecision(2) << arr[i].getRating() << endl;
-        cout << "\n" << i << "\n";
     }
 }
