@@ -12,7 +12,7 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
      * string searchTerm is the actor, director, or genre. For gross it will be an empty string.
      * int searchType is 1. Merge Sort or 2. Quick Sort
     */
-    int numLines = 198400; // how many lines to parse (change l8r)
+    int numLines = 198630; // how many lines to parse
     vector<Movies> allMovies = parseMovies(numLines);
 
     if (searchOption == 1) {
@@ -30,11 +30,19 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         Movies arr[n];
         copy(actorMovies.begin(), actorMovies.end(), arr);
         if (searchType == 1) {
+            auto startTime = std::chrono::system_clock::now();
             mergeSort(arr, 0, n - 1);
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Merge Sort Finished in: " << timeTaken.count() << " seconds" << endl;
             printMoviesArray(arr, n);
         }
         else {
+            auto startTime = std::chrono::system_clock::now();
             quickSort(arr, 0, n - 1);
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Quick Sort Finished in: " << timeTaken.count() << " seconds" << endl;
             printMoviesArray(arr, n);
         }
         if (n == 0) {
@@ -56,11 +64,19 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         Movies arr[n];
         copy(directorMovies.begin(), directorMovies.end(), arr);
         if (searchType == 1) {
+            auto startTime = std::chrono::system_clock::now();
             mergeSort(arr, 0, n - 1);
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Merge Sort Finished in: " << timeTaken.count() << " seconds" << endl;
             printMoviesArray(arr, n);
         }
         else {
+            auto startTime = std::chrono::system_clock::now();
             quickSort(arr, 0, n - 1);
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Quick Sort Finished in: " << timeTaken.count() << " seconds" << endl;
             printMoviesArray(arr, n);
         }
         if (n == 0) {
@@ -82,11 +98,19 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         Movies arr[n];
         copy(genreMovies.begin(), genreMovies.end(), arr);
         if (searchType == 1) {
+            auto startTime = std::chrono::system_clock::now();
             mergeSort(arr, 0, n - 1);
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Merge Sort Finished in: " << timeTaken.count() << " seconds" << endl;
             printMoviesArray(arr, n);
         }
         else {
+            auto startTime = std::chrono::system_clock::now();
             quickSort(arr, 0, n - 1);
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Quick Sort Finished in: " << timeTaken.count() << " seconds" << endl;
             printMoviesArray(arr, n);
         }
         if (n == 0) {
@@ -108,12 +132,18 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
         Movies arr[n];
         copy(gross.begin(), gross.end(), arr);
         if (searchType == 1) {
+            auto startTime = std::chrono::system_clock::now();
             mergeSort(arr, 0, n - 1);
-
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Merge Sort Finished in: " << timeTaken.count() << " seconds" << endl;
         }
         else {
+            auto startTime = std::chrono::system_clock::now();
             quickSort(arr, 0, n - 1);
-
+            auto endTime = std::chrono::system_clock::now();
+            std::chrono::duration<double> timeTaken = endTime - startTime;
+            cout << "Quick Sort Finished in: " << timeTaken.count() << " seconds" << endl;
         }
         for (int i = 0; i < n; i++) {
             int tempGross = arr[i].getRating();
@@ -187,7 +217,7 @@ void printMoviesArray(Movies arr[], int len) {
             cout <<"   Gross: Not listed" << endl;
         }
 
-        cout <<"   Description: " << arr[i].getDescription();
+        cout <<"   Description: " << arr[i].getDescription() << endl;
 
     }
 }

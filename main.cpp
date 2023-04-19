@@ -77,7 +77,7 @@ void testParse() {
 int main() {
     // testQuick();
     // testMerge();
-    searchDistributor(4, "", 2);
+    // searchDistributor(4, "", 2);
 
     cout << "Welcome to Movie Maestro!" << endl;
     // 1. do parsing with parse.h
@@ -86,6 +86,8 @@ int main() {
     // 2. Prompt user with search options
     string userInput;
     userInput = "";
+    string searchTerm = ""; // search term will hold either actor, director, or genre.
+    int searchOption = 0; // will hold which option user chooses: 1) actor, 2) director, 3) genre, 4) gross box office
 
     while (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4") { // will loop if user does not input 1-4
         cout << "How would you like to search?" << endl;
@@ -97,8 +99,7 @@ int main() {
 
         cin >> userInput;
 
-        string searchTerm = ""; // search term will hold either actor, director, or genre.
-        int searchOption = 0;
+
 
         if (userInput == "1") {
             cout << "What actor would you like to search for?" << endl;
@@ -111,7 +112,7 @@ int main() {
             searchOption = 2;
         }
         else if (userInput == "3") {
-            cout << "What genre would you like to search for?" << endl;
+            cout << "What genre would you like to search for? (options: Action, Adventure, Animation, Crime, Family, Fantasy, History, Horror, Romance, Sci-Fi, Film-Noir, Sports, Thriller, War)" << endl;
             // maybe print options later?
             cin >> searchTerm;
             searchOption = 3;
@@ -142,5 +143,26 @@ int main() {
         }
     }
 
+    //4. Search
+    if (searchOption == 1) {
+        cout << "Searching movies for the actor " << searchTerm;
+    }
+    else if (searchOption == 2) {
+        cout << "Searching movies for the director " << searchTerm;
+    }
+    else if (searchOption == 3) {
+        cout << "Searching movies for " << searchTerm << " genre";
+    }
+    else if (searchOption == 4) {
+        cout << "Showing highest grossing movies";
+    }
+
+    if (userInput == "1") {
+        cout << " with Merge Sort...\n" << endl;
+    }
+    else if (userInput == "2") {
+        cout << " with Quick Sort...\n" << endl;
+    }
+    searchDistributor(searchOption, searchTerm, stoi(userInput));
 }
 
