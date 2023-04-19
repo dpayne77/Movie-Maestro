@@ -1,3 +1,7 @@
+#include <iostream>
+#include <chrono>
+#include <ctime>
+
 void searchDistributor(int searchOption, std::string searchTerm, int searchType);
 void printMoviesArray(Movies arr[], int len);
 
@@ -91,6 +95,33 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
     }
     else if (searchOption == 4) {
         // search by gross
+        vector<Movies> gross;
+        for (int i = 0; i < allMovies.size(); i++) {
+            if (allMovies[i].getGross() > 0) {
+                int tempRating = allMovies[i].getRating();
+                allMovies[i].setRating(allMovies[i].getGross());
+                allMovies[i].setGross(tempRating);
+                gross.push_back(allMovies[i]);
+            }
+        }
+        int n = gross.size();
+        Movies arr[n];
+        copy(gross.begin(), gross.end(), arr);
+        if (searchType == 1) {
+            mergeSort(arr, 0, n - 1);
+
+        }
+        else {
+            quickSort(arr, 0, n - 1);
+
+        }
+        for (int i = 0; i < n; i++) {
+            int tempGross = arr[i].getRating();
+            arr[i].setRating(arr[i].getGross());
+            arr[i].setGross(tempGross);
+        }
+        printMoviesArray(arr, n);
+
     }
 }
 
