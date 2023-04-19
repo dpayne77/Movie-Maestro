@@ -96,6 +96,14 @@ void searchDistributor(int searchOption, std::string searchTerm, int searchType)
 
 void printMoviesArray(Movies arr[], int len) {
     for (int i = 0; i < len; i++) {
+        if (i % 25 == 0 && i != 0) {
+            cout << i << " of " << len << " results shown. Show more? (type 'Y' or 'N')" << endl;
+            char input;
+            cin >> input;
+            if (input != 'y' && input != 'Y') {
+                break;
+            }
+        }
         cout << "\nNumber " << i + 1 << ": \n";
 
         cout << arr[i].getMovieName() << endl;
