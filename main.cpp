@@ -97,18 +97,16 @@ int main() {
         cout << "4) Search by gross box office" << endl;
         cout << "Enter a number 1-4:" << endl;
 
-        cin >> userInput;
-
-
+        getline(cin, userInput);
 
         if (userInput == "1") {
             cout << "What actor would you like to search for?" << endl;
-            cin >> searchTerm;
+            getline(cin, searchTerm);
             searchOption = 1;
         }
         else if (userInput == "2") {
             cout << "What director would you like to search for?" << endl;
-            cin >> searchTerm;
+            getline(cin, searchTerm);
             searchOption = 2;
         }
         else if (userInput == "3") {
