@@ -5,6 +5,7 @@
 #include "quicksort.h"
 #include "mergesort.h"
 #include "search.h"
+#include "welcome.h"
 #include <string>
 #include <vector>
 
@@ -18,7 +19,7 @@ void printMoviesArr(Movies arr[], int len) {
 }
 
 void testQuick() {
-    vector<Movies> vec = parseMovies(30000);
+    vector<Movies> vec = parseMovies(5);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
@@ -35,7 +36,7 @@ void testQuick() {
 }
 
 void testMerge() {
-    vector<Movies> vec = parseMovies(198629);
+    vector<Movies> vec = parseMovies(5);
     int n = vec.size();
     Movies arr[n];
     copy(vec.begin(), vec.end(), arr);
@@ -77,11 +78,12 @@ void testParse() {
 int main() {
     // testQuick();
     // testMerge();
+    // testParse();
     // searchDistributor(4, "", 2);
 
-    cout << "Welcome to Movie Maestro!" << endl;
+    welcomeText();
+
     // 1. do parsing with parse.h
-    // testParse();
 
     // 2. Prompt user with search options
     string userInput;
