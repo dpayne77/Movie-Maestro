@@ -211,13 +211,23 @@ void printMoviesArray(Movies arr[], int len) {
             cout << "       - " << names[i] << endl;
         }
         if (arr[i].getGross() != 0) {
-            cout <<"   Gross: $" << (arr[i].getGross()) << endl;
+            string strGross = to_string(arr[i].getGross());
+            reverse(strGross.begin(), strGross.end());
+            string formattedGross;
+
+            for (int n = 1; n <= strGross.size(); n++) {
+                formattedGross.push_back(strGross[n-1]);
+                if (!(n % 3) && n != strGross.size()) {
+                    formattedGross.push_back(',');
+                }
+            }
+            reverse(formattedGross.begin(), formattedGross.end());
+            cout << "   Gross: $" << formattedGross << endl;
         }
         else {
             cout <<"   Gross: Not listed" << endl;
         }
 
         cout <<"   Description: " << arr[i].getDescription() << endl;
-
     }
 }
