@@ -1,5 +1,7 @@
 # Movie-Maestro 🎞️
-Project 3 for data structures
+Project 3 for COP3530: Data Structures and Algorithms, Spring 2023
+
+**Report Link**: https://docs.google.com/document/d/1ZtFmy2zIavzoIuMKWwf1fFdtQhapecIpyZwWZgdCN1Q/edit?usp=sharing
 
 **Team Members**: David Payne, C.J. Annunziato, Matthew Dong
 
